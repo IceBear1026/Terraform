@@ -27,3 +27,23 @@ spec:
         duration: 5s
         factor: 2
         maxDuration: 3m
+
+# Simplified version of the above ArgoCD Application manifest for reference:
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: 3tirewebapp-dev
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/IceBear1026/Terraform.git
+#     targetRevision: main
+#     path: day28/manifest-files/3tire-configs
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: 3tirewebapp-dev
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
